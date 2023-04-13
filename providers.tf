@@ -13,7 +13,17 @@ terraform {
   }
 }
 
+terraform {
+  cloud {
+    organization = "Hydrohomie-training"
+    workspaces {
+      name = "SDN-Lab3-Terraform-Project" 
+    }
+  }
+}
+
 provider "aws" {
+  # profile = "default"
   region                   = "us-east-1"
-  shared_credentials_files = ["/Users/justi/.aws/credentials.txt"]
+  shared_credentials_files = ["/Users/Owner/.aws/credentials"]
 }
